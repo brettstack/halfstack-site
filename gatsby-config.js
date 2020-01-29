@@ -265,6 +265,9 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`
     },
     {
+      resolve: "gatsby-plugin-robots-txt"
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         include: /svg-icons/
