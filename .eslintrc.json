@@ -14,7 +14,13 @@
       "jsx": true
     }
   },
-  "plugins": ["prettier", "react", "jsx-a11y", "import", "graphql"],
+  "plugins": [
+    "prettier",
+    "react",
+    "jsx-a11y",
+    "import",
+    "graphql"
+  ],
   "env": {
     "browser": true,
     "es6": true,
@@ -33,16 +39,30 @@
     "no-plusplus": "off",
     "no-shadow": "warn",
     "no-underscore-dangle": "warn",
-    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
     "no-nested-ternary": "off",
     "no-unused-vars": "warn",
     "prefer-destructuring": "off",
-    "prettier/prettier": ["error"],
-    "react/jsx-uses-vars": "error"
+    "prettier/prettier": [
+      "error"
+    ],
+    "react/jsx-uses-vars": "error",
+    "semi": [
+      "never"
+    ]
   },
   "overrides": [
     {
-      "files": ["*.spec.js", "*.integration.js"],
+      "files": [
+        "*.spec.js",
+        "*.integration.js"
+      ],
       "rules": {
         "no-unused-expressions": "off"
       }
