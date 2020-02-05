@@ -14,6 +14,14 @@ A [GatsbyJS](https://www.gatsbyjs.org/) blog starter. <br /><br />
 
 ![](static/screens/gatsby-starter-hero-blog.gif) <br />
 
+## Setup
+
+Requires Node 10.
+
+```
+npm run develop
+```
+
 ## Writing posts
 
 Create a directory with a slugified name of your desired title, e.g. `my-post`. When you're ready to publish it, change it to the following format: `yyyy-mm-dd--my-post`, e.g. `2020-01-30--my-post`.

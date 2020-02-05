@@ -13,6 +13,50 @@ const Bodytext = props => {
           animation-name: bodytextEntry;
           animation-duration: ${theme.time.duration.long};
 
+          :global(img) {
+            display: block;
+            margin: auto;
+          }
+
+          /* https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/?=prism#optional-add-line-highlighting-styles */
+          :global(.gatsby-highlight-code-line) {
+            background-color: #373832;
+            display: block;
+            margin-right: -1em;
+            margin-left: -1em;
+            padding-right: 1em;
+            padding-left: 0.75em;
+            border-left: 0.25em solid #9f9;
+          }
+
+          /**
+           * Add back the container background-color, border-radius, padding, margin
+           * and overflow that we removed from <pre>.
+           */
+          :global(.gatsby-highlight) {
+            background-color: #272822;
+            border-radius: 0.3em;
+            margin: 0.5em 0;
+            padding: 1em;
+            overflow: auto;
+          }
+
+          /**
+           * Remove the default PrismJS theme background-color, border-radius, margin,
+           * padding and overflow.
+           * 1. Make the element just wide enough to fit its content.
+           * 2. Always fill the visible space in .gatsby-highlight.
+           * 3. Adjust the position of the line numbers
+           */
+          :global(.gatsby-highlight pre[class*="language-"]) {
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            overflow: initial;
+            float: left; /* 1 */
+            min-width: 100%; /* 2 */
+          }
+          
           :global(h2),
           :global(h3) {
             margin: 1.5em 0 1em;
