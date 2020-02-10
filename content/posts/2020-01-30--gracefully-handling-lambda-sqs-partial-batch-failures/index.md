@@ -21,7 +21,7 @@ If you configure your SQS Queue with a Dead Letter Queue (DLQ), your messages wi
 
 ## Handling partial batch failures (the hard way)
 
-To handle partial batch failures without the middleware, you need to delete successfully processed messages, then throw an error if any of the messages fail. Here's a simple example:
+To handle partial batch failures, you need to delete successfully processed messages within your handler, and then throw an error if any of the messages fail. Here's a simple example:
 
 ```javascript
 // highlight-start
@@ -69,13 +69,11 @@ function getQueueUrl ({ sqs, eventSourceARN }) {
 module.exports.handler = handler
 ```
 
+Having to do this for a single Lambda function might not be a big deal, but if you have multiple Lambda functions processing various SQS queues, you might want to start extracting that core logic somewhere else.
+
 ## Middy and the sqs-partial-batch-failure middleware
 
-Enter [Middy](http://npmjs.com/package/@middy/core), the popular middleware framework for Lambda, and the recently launched [sqs-partial-batch-failure middleware](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure) that handles partial SQS batch failures for you.
-
-By returning a [`Promise.allSettled()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) value from your handler, this middleware identifies if a partial batch failure occurred, deletes the successfully processed messages off the queue using [SQS.deleteMessageBatch](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#deleteMessageBatch-property), and throws an error to keep the failed messages on the queue.
-
-If the entire batch was successful, this middleware leaves the deleting of messages to the Lambda service, saving you compute time and 💵.
+Enter [Middy](http://npmjs.com/package/@middy/core), the popular middleware framework for Lambda, and the recently launched [sqs-partial-batch-failure middleware](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure) that handles partial SQS batch failures for you. Simply `npm install @middy/core @middy/sqs-partial-batch-failure` and integrate it like so:
 
 ```javascript
 // highlight-start
@@ -104,6 +102,10 @@ middyHandler
 
 module.exports.handler = middyHandler
 ```
+
+By returning a [`Promise.allSettled()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) value from your handler, this middleware identifies if a partial batch failure occurred, deletes the successfully processed messages off the queue using [SQS.deleteMessageBatch](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#deleteMessageBatch-property), and throws an error to keep the failed messages on the queue.
+
+Not only is it simpler to add this middleware than writing the code yourself, it's also an improvement over the example above. Firstly, it deletes the messages in a single batch (rather than individually), and secondly, if the entire batch was successful, this middleware doesn't do anything! It leaves the deleting of messages to the Lambda service, saving you compute time and 💵.
 
 ## End
 

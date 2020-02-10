@@ -7,13 +7,15 @@ I've covered a wide range of areas during my 10+ years of experience in the soft
 
 ## Contact
 
-* [Twitter](https://twitter.com/AWSbrett)
-* [Email](mailto:brett@halfstack.software)
-* [LinkedIn](https://www.linkedin.com/in/breandr/)
+* [Brett Andrews](https://twitter.com/AWSbrett) on Twitter
+* [Brett Andrews](https://www.linkedin.com/in/breandr/) on LinkedIn
+* [brett@halfstack.software](mailto:brett@halfstack.software)
 
 ## Projects
 
 ### Creator of @middy/sqs-partial-batch-failure
+
+<!-- ![Middy](./middy-logo.png) ![SQS](./Amazon-Simple-Queue-Service-SQS@4x.png) -->
 
 [@middy/sqs-partial-batch-failure](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure) is a Lambda middleware for [handling SQS partial batch failures in AWS Lambda](/gracefully-handling-lambda-sqs-partial-batch-failures/).
 

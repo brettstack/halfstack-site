@@ -7,7 +7,7 @@ import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
-import avatar from "../../images/png/brett-andrews-square-256.png";
+import avatar from "../../images/png/brett-andrews-square-60.png";
 
 class Header extends React.Component {
   state = {
