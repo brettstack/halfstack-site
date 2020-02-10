@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: "Halfstack - Software Development",
-  shortSiteTitle: "Halfstack - Software", // <title> ending for posts and pages
-  siteDescription: "Software Development.",
+  siteTitle: "Brett Andrews - Software Development",
+  shortSiteTitle: "Brett Andrews - Software Development", // <title> ending for posts and pages
+  siteDescription: "Cloud-native software solutions.",
   siteUrl: "https://halfstack.software",
   // pathPrefix: "",
   siteImage: "preview.jpg",
@@ -13,11 +13,11 @@ module.exports = {
 
   /* info */
   headerTitle: "Brett Andrews",
-  headerSubTitle: "software dev",
+  headerSubTitle: "software developer",
 
   /* manifest.json */
-  manifestName: "Halfstack - Software Development",
-  manifestShortName: "Halfstack", // max 12 characters
+  manifestName: "Brett Andrews - Software Development",
+  manifestShortName: "BrettAndrews", // max 12 characters
   manifestStartUrl: "/index.html",
   manifestBackgroundColor: "white",
   manifestThemeColor: "#666",

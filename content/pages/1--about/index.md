@@ -3,7 +3,7 @@ title: About
 menuTitle: About
 ---
 
-Brett Andrews has over 10 years of experience in the software industry, covering a wide range of areas. He's currently a Staff Software Engineer at Wizeline, where he helps improve the performance of software teams. Prior to Wizeline, Brett helped teams within the Serverless organization at Amazon Web Services (AWS) by providing input on UI, API, Architecture, CI/CD, DevOps, Open Source Software, and Product.
+I've covered a wide range of areas during my 10+ years of experience in the software industry. I helped teams within the Serverless organization at Amazon Web Services (AWS) by providing input on UI, API, Architecture, CI/CD, DevOps, Open Source Software, and Product. I'm currently a Staff Software Engineer at Wizeline, where I help improve the performance of software teams.
 
 ## Projects
 
@@ -13,9 +13,9 @@ Brett Andrews has over 10 years of experience in the software industry, covering
 
 ### Creator of aws-serverless-express
 
-[aws-serverless-express](https://github.com/awslabs/aws-serverless-express) is an Open-Source Software (OSS) project for running [Express](https://expressjs.com/) and other Node.js web frameworks on [Serverless AWS](https://aws.amazon.com/serverless/) using [Lambda](https://aws.amazon.com/lambda/) and [Amazon API Gateway](https://aws.amazon.com/api-gateway/). The project is used by thousands of [AWS](https://aws.amazon.com/) customers for running production applications, has over 3k stars on [GitHub](https://github.com/awslabs/aws-serverless-express), and is downloaded over 800k times a month on [NPM](https://www.npmjs.com/package/aws-serverless-express).
+[aws-serverless-express](https://github.com/awslabs/aws-serverless-express) is a library for running [Express](https://expressjs.com/) and other Node.js web frameworks on [Serverless AWS](https://aws.amazon.com/serverless/) using [Lambda](https://aws.amazon.com/lambda/) and [Amazon API Gateway](https://aws.amazon.com/api-gateway/). The project is used by thousands of [AWS](https://aws.amazon.com/) customers for running production applications of all scales, has over 3k stars on [GitHub](https://github.com/awslabs/aws-serverless-express), and is downloaded over 800k times a month on [NPM](https://www.npmjs.com/package/aws-serverless-express).
 
-I was responsible for the inception, implementation, maintenance, support, documentation, and releases for this product. You can see [my blog post on the AWS Compute Blog](https://aws.amazon.com/blogs/compute/going-serverless-migrating-an-express-application-to-amazon-api-gateway-and-aws-lambda/) as well as [a blog post by Jeff Barr](https://aws.amazon.com/blogs/aws/running-express-applications-on-aws-lambda-and-amazon-api-gateway/).
+I was responsible for the inception, implementation, maintenance, support, documentation, releases, and growth for this product. You can see [my blog post on the AWS Compute Blog](https://aws.amazon.com/blogs/compute/going-serverless-migrating-an-express-application-to-amazon-api-gateway-and-aws-lambda/) as well as [a blog post by Jeff Barr](https://aws.amazon.com/blogs/aws/running-express-applications-on-aws-lambda-and-amazon-api-gateway/).
 
 ### Lead engineer for AWS SAM (Serverless Application Modal)
 
@@ -31,6 +31,10 @@ As Scrum Master for this Agile team, I organized sprints, prioritized roadmaps/b
 
 [Amazon API Gateway](https://aws.amazon.com/api-gateway/) allows customers to define HTTP/REST APIs to interface with various integrations (primarily, [Lambda](https://aws.amazon.com/lambda)). I led the development of the UI for this service and helped modernize UI development within the organization by providing guidance on modern web development techniques (ECMAScript 6+, Webpack, automated testing, etc.) to teams such as Lambda and Cognito.
 
-### CSNET
+### Community Services .NET
 
-Community Services .NET is a startup focused on delivering Case Management Software to Human Services organizations. I assisted with the overall design and architecture of the system, led the development of the UI, and worked with customers to define their product requirements.
+Community Services .NET (CSnet) is a startup focused on delivering Case Management Software to Human Services organizations. I assisted with the overall design and architecture of the system, led the development of the UI, and worked with customers to define their product requirements.
+
+### This website
+
+Based on [gatsby-starter-hero-blog](https://github.com/greglobinski/gatsby-starter-hero-blog) by [Greg Lobinski](https://www.greglobinski.com/). Powered by [Gatsby](https://www.gatsbyjs.org/) and deployed and hosted on AWS using [Amplify](https://aws.amazon.com/amplify/).

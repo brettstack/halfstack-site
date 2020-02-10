@@ -9,47 +9,15 @@ When using [SQS](https://aws.amazon.com/sqs/) as an event source for [Lambda](ht
 
 However, in the event of a partial batch failure (when a subset of messages aren't able to be processed successfully), Lambda doesn't provide a way to define which messages were successfully processed and should be deleted, and which messages failed and should remain on the queue.
 
-## Middy and the sqs-partial-batch-failure middleware
+## What happens if I don't handle partial batch failures?
 
-Enter [Middy](http://npmjs.com/package/@middy/core), the popular middleware framework for Lambda, and the recently launched [sqs-partial-batch-failure middleware](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure) that handles partial SQS batch failures for you.
+If you don't handle partial batch failures, one of three things will happen:
 
-By returning a [`Promise.allSettled()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) value from your handler, this middleware identifies if a partial batch failure occurred, deletes the successfully processed messages off the queue using [SQS.deleteMessageBatch](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#deleteMessageBatch-property), and throws an error to keep the failed messages on the queue.
+If your Lambda function resolves successfully (i.e., it doesn't throw an error), all messages in the batch will be deleted from the queue, never to be heard of again. Of course, if one of those messages failed to be processed correctly, this probably isn't what you wanted.
 
-If the entire batch was successful, this middleware leaves the deleting of messages to the Lambda service, saving you compute time and 💵.
+Instead, you should probably throw an error. All of the messages in the batch will remain on the queue, including those that were successfully processed. These messages will then be invoked by another Lambda function, with the successful messages running the risk of being processed a second time (potentially causing other issues), and the bad messages likely causing another partial batch failure (unless the previous failure was due to a transient error). That batch of messages will once again be returned to the queue, and bad messages will continue to cause partial batch failures, which brings us to our third scenario.
 
-```javascript
-// highlight-start
-const middy = require('@middy/core')
-const sqsPartialBatchFailureMiddleware = require('@middy/sqs-partial-batch-failure')
-// highlight-end
-
-async function handler (event) {
-  const messageProcessingPromises = event.Records.map(processMessage)
-
-  // highlight-start
-  return Promise.allSettled(messageProcessingPromises)
-  // highlight-end
-}
-
-async function processMessage(record) {
-  ...
-}
-
-// highlight-start
-const middyHandler = middy(handler)
-
-middyHandler
-  .use(sqsPartialBatchFailureMiddleware())
-// highlight-end
-
-module.exports.handler = middyHandler
-```
-
-## Conclusion(ish)
-
-If you found this middleware useful or need help with your AWS Serverless setup, let me know! You can find me on [Twitter](https://twitter.com/AWSbrett) (DMs open) and of course [email](mailto:brett@halfstack.software). If you want to dive deeper into partial batch failures, stick around after the break. Otherwise...
-
-![Bye](./bye.gif)
+If you configure your SQS Queue with a Dead Letter Queue (DLQ), your messages will end up on this quarantined queue instead, and from there, you can choose to handle these messages in any way you like. Maybe you have another Lambda function to process them differently, or maybe you leave them there for engineers to perform analysis. Whatever it is you decide to do with these "dead letters" you probably don't want the queue to be littered with messages that were actually successfully processed, which is a possibility if a successfully processed message continues to end up in a batch with partial failures.
 
 ## Handling partial batch failures (the hard way)
 
@@ -101,12 +69,44 @@ function getQueueUrl ({ sqs, eventSourceARN }) {
 module.exports.handler = handler
 ```
 
-## What happens if I don't handle partial batch failures?
+## Middy and the sqs-partial-batch-failure middleware
 
-If you don't handle partial batch failures, one of three things will happen:
+Enter [Middy](http://npmjs.com/package/@middy/core), the popular middleware framework for Lambda, and the recently launched [sqs-partial-batch-failure middleware](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure) that handles partial SQS batch failures for you.
 
-If your Lambda function resolves successfully (i.e., it doesn't throw an error), all messages in the batch will be deleted from the queue, never to be heard of again. Of course, if one of those messages failed to be processed correctly, this probably isn't what you wanted.
+By returning a [`Promise.allSettled()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) value from your handler, this middleware identifies if a partial batch failure occurred, deletes the successfully processed messages off the queue using [SQS.deleteMessageBatch](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#deleteMessageBatch-property), and throws an error to keep the failed messages on the queue.
 
-If your Lambda function throws an error, all of the messages in the batch will remain on the queue, including those that were successfully processed. These messages will then be invoked by another Lambda function, with the successful messages running the risk of being processed a second time (potentially causing other issues), and the bad messages likely causing another partial batch failure (unless the previous failure was due to a transient error). That batch of messages will once again be returned to the queue, and bad messages will continue to cause partial batch failures, which brings us to our third scenario.
+If the entire batch was successful, this middleware leaves the deleting of messages to the Lambda service, saving you compute time and 💵.
 
-If you configure your SQS Queue with a Dead Letter Queue (DLQ), your messages will end up on this quarantined queue instead, and from there, you can choose to handle these messages in any way you like. Maybe you have another Lambda function to process them differently, or maybe you leave them there for engineers to perform analysis. Whatever it is you decide to do with these "dead letters" you probably don't want the queue to be littered with messages that were actually successfully processed, which is a possibility if a successfully processed message continues to end up in a batch with partial failures.
+```javascript
+// highlight-start
+const middy = require('@middy/core')
+const sqsPartialBatchFailureMiddleware = require('@middy/sqs-partial-batch-failure')
+// highlight-end
+
+async function handler (event) {
+  const messageProcessingPromises = event.Records.map(processMessage)
+
+  // highlight-start
+  return Promise.allSettled(messageProcessingPromises)
+  // highlight-end
+}
+
+async function processMessage(record) {
+  ...
+}
+
+// highlight-start
+const middyHandler = middy(handler)
+
+middyHandler
+  .use(sqsPartialBatchFailureMiddleware())
+// highlight-end
+
+module.exports.handler = middyHandler
+```
+
+## End
+
+Until Lambda adds support for handling partial batch failulres, it's up to you to clean up successfully processed messages. This is now as simple as adding a few lines of code with [Middy](http://npmjs.com/package/@middy/core) and [sqs-partial-batch-failure middleware](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure).
+
+If you found this middleware useful or need help with your AWS Serverless setup, let me know! You can find me on [Twitter](https://twitter.com/AWSbrett) (DMs open) and of course [email](mailto:brett@halfstack.software).

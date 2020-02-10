@@ -2,4 +2,4 @@
 title: footnote
 ---
 
-* Copyright (c) 2020 Halfstack * Based on ...
+* Copyright © 2020 Brett Andrews
