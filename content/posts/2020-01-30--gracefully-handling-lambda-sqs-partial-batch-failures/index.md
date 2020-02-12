@@ -109,6 +109,6 @@ Not only is it simpler to add this middleware than writing the code yourself, it
 
 ## End
 
-Until Lambda adds support for handling partial batch failulres, it's up to you to clean up successfully processed messages. This is now as simple as adding a few lines of code with [Middy](http://npmjs.com/package/@middy/core) and [sqs-partial-batch-failure middleware](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure).
+Until Lambda adds support for handling partial batch failures, it's up to you to clean up successfully processed messages. This is now as simple as adding a few lines of code with [Middy](http://npmjs.com/package/@middy/core) and [sqs-partial-batch-failure middleware](https://www.npmjs.com/package/@middy/sqs-partial-batch-failure).
 
 If you found this middleware useful or need help with your AWS Serverless setup, let me know! You can find me on [Twitter](https://twitter.com/AWSbrett) (DMs open) and of course [email](mailto:brett@halfstack.software).
