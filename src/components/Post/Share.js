@@ -2,16 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import {
   FacebookShareButton,
-  GooglePlusShareButton,
   LinkedinShareButton,
   TwitterShareButton,
+  RedditShareButton,
   FacebookShareCount,
-  GooglePlusShareCount,
   LinkedinShareCount,
+  RedditShareCount,
   FacebookIcon,
   TwitterIcon,
-  GooglePlusIcon,
-  LinkedinIcon
+  LinkedinIcon,
+  RedditIcon
 } from "react-share";
 
 import config from "../../../content/meta/config";
@@ -45,17 +45,6 @@ const PostShare = props => {
           >
             <TwitterIcon round size={iconSize} />
           </TwitterShareButton>
-          <GooglePlusShareButton
-            url={url}
-            additionalProps={{
-              "aria-label": "Google share"
-            }}
-          >
-            <GooglePlusIcon round size={iconSize} />
-            <GooglePlusShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
-            </GooglePlusShareCount>
-          </GooglePlusShareButton>
           <FacebookShareButton
             url={url}
             quote={`${title} - ${excerpt}`}
@@ -68,6 +57,18 @@ const PostShare = props => {
               {count => <div className="share-count">{filter(count)}</div>}
             </FacebookShareCount>
           </FacebookShareButton>
+          <RedditShareButton
+            url={url}
+            quote={`${title} - ${excerpt}`}
+            additionalProps={{
+              "aria-label": "Reddit share"
+            }}
+          >
+            <RedditIcon round size={iconSize} />
+            <RedditShareCount url={url}>
+              {count => <div className="share-count">{filter(count)}</div>}
+            </RedditShareCount>
+          </RedditShareButton>
           <LinkedinShareButton
             url={url}
             title={title}

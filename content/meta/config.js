@@ -3,7 +3,7 @@ module.exports = {
   shortSiteTitle: "Brett Andrews - Software Development", // <title> ending for posts and pages
   siteDescription: "Cloud-native software solutions.",
   siteUrl: "https://halfstack.software",
-  // pathPrefix: "",
+  pathPrefix: "",
   siteImage: "preview.jpg",
   siteLanguage: "en",
 
