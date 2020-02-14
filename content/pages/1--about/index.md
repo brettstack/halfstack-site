@@ -7,9 +7,13 @@ I'm currently a Staff Software Engineer at [Wizeline](https://www.wizeline.com/)
 
 ## Contact
 
-* [Brett Andrews](https://twitter.com/AWSbrett) on Twitter
-* [Brett Andrews](https://www.linkedin.com/in/breandr/) on LinkedIn
-* [brett@halfstack.software](mailto:brett@halfstack.software)
+Twitter: [Brett Andrews](https://twitter.com/AWSbrett)
+
+LinkedIn: [Brett Andrews](https://www.linkedin.com/in/breandr/)
+
+GitHub: [Brett Andrews](https://github.com/brettstack)
+
+Email: [brett@halfstack.software](mailto:brett@halfstack.software)
 
 ## Projects
 
