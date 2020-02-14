@@ -7,7 +7,7 @@ import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
-import avatar from "../../images/png/brett-andrews-square-60.png";
+import avatar from "../../../static/icons/icon-96x96.png";
 
 class Header extends React.Component {
   state = {
@@ -111,7 +111,7 @@ class Header extends React.Component {
           }
 
           .logo {
-            border-radius: 25%;
+            border-radius: 50%;
             border: 1px solid #eee;
             display: inline-block;
             height: 44px;
