@@ -3,7 +3,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Contact from "../components/Contact";
+import Projects from "../components/Projects";
 import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 
@@ -22,9 +22,9 @@ const ContactPage = props => {
         {theme => (
           <Article theme={theme}>
             <header>
-              <Headline title="Contact" theme={theme} />
+              <Headline title="Projects" theme={theme} />
             </header>
-            <Contact theme={theme} />
+            <Projects theme={theme} />
           </Article>
         )}
       </ThemeContext.Consumer>
