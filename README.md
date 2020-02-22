@@ -18,7 +18,7 @@ A [GatsbyJS](https://www.gatsbyjs.org/) blog starter. <br /><br />
 
 Requires Node 10.
 
-```
+```shell
 npm run develop
 ```
 

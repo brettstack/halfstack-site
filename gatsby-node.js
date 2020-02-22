@@ -77,7 +77,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         if (result.errors) {
-          console.log(result.errors);
+          console.log('result.errors', result.errors);
           reject(result.errors);
         }
 
@@ -131,6 +131,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // and pages.
         const pages = items.filter(item => item.node.fields.source === "pages");
+
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
           const source = node.fields.source;
@@ -145,6 +146,9 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
       })
+        .catch(e => {
+          console.error('error', e)
+        })
     );
   });
 };

@@ -260,7 +260,8 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml"
+            output: "/rss.xml",
+            title: config.siteTitle
           }
         ]
       }
