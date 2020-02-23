@@ -17,7 +17,7 @@ const Bodytext = props => {
             margin-left: 2rem;
             margin-right: 2rem;
           }
-          
+
           :global(blockquote) {
             padding: 0 1em;
             color: #6a737d;
@@ -125,6 +125,7 @@ const Bodytext = props => {
             color: inherit;
             padding: 0.1em 0.3em 0.2em;
             border-radius: 0.1em;
+            word-break: break-all;
           }
         }
 
