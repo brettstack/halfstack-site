@@ -13,6 +13,26 @@ const Bodytext = props => {
           animation-name: bodytextEntry;
           animation-duration: ${theme.time.duration.long};
 
+          :global(ol) {
+            margin-left: 2rem;
+            margin-right: 2rem;
+          }
+          
+          :global(blockquote) {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: .25em solid #dfe2e5;
+            margin-bottom: 1.5em;
+            
+            >:last-child {
+              margin-bottom: 0;
+            }
+            
+            >:first-child {
+              margin-top: 0;
+            }
+          }
+
           :global(img) {
             display: block;
             margin: auto;
