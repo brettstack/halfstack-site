@@ -1,6 +1,6 @@
 ---
 title: 'Building a Civilization VI "Play by Cloud" Webhook Turn Notifier Service'
-category: "serverless"
+category: "civ-play-by-cloud"
 cover: architecture-diagram.png
 author: Brett Andrews
 ---
@@ -12,6 +12,8 @@ Admittedly, I had no idea how to play Civ at that young age, and I mostly played
 I've played every Civilization release since, and while I'm not particularly good at the game, I was able to finally claim victory on the hardest difficulty. I spawned right next to another Civ and took their Settler before they could found a city... Sorry Australia. Still counts.
 
 In this series of articles, we'll build a service to enhance the player experience in Civilization VI's "Play by Cloud" mode. You can find <a href="https://github.com/brettstack/civ6-play-by-cloud-turn-notifier" target="_blank">the source code for the entire service on GitHub</a>.
+
+> If you're just here to get Play by Cloud notifications to Discord and don't care about the technical details, simply create a Discord Channel Webhook, copy the URL, paste it onto the end of this URL `https://civ.halfstack.software?discordWebhook=YOUR_DISCORD_WEBHOOK_URL_HERE`, and copy-paste that final URL into the Civ VI game settings. 🚀
 
 ## Civilization VI, Play by Cloud, and Webhooks
 
@@ -167,7 +169,7 @@ resources:
             ValidationDomain: ${{self:custom.domain.${{self:provider.stage}}.validationDomain}}
 ```
 
-Civilization VI makes a request to our <a href="https://aws.amazon.com/api-gateway/" target="_blank">Amazon API Gateway</a> endpoint, which performs some transformations on the request and sends a message to an <a href="https://aws.amazon.com/sqs/" target="_blank">SQS Queue</a>. That queue is configured to send messages to a DLQ if a message failes to be processed for the 5th time.
+Civilization VI makes a request to our <a href="https://aws.amazon.com/api-gateway/" target="_blank">Amazon API Gateway</a> endpoint, which performs some transformations on the request and sends a message to an <a href="https://aws.amazon.com/sqs/" target="_blank">SQS Queue</a>. That queue is configured to send messages to a <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html" target="_blank">DLQ</a> if a message failes to be processed for the 5th time.
 
 > Adding SQS brings additional control and resiliency over going directly from API Gateway to Lambda. Another alternative solution is going directly from API Gateway to the Discord Webhook (the "no code" approach) using API Gateway's HTTP integration endpoint with VTL transformation, but <a href="https://twitter.com/AWSbrett/status/1231260929825787905" target="_blank">this approach isn't flexible for when requirements change</a>.
 
@@ -235,7 +237,18 @@ Finally, the Discord Webhook receives the request, and a message is posted to th
 
 ## Future enhancements
 
+In future iterations, we can build on the MVP to enhance the functionality of this service, such as:
+
 1. Map Civ VI player names to Discord usernames for @ notifying
-2. Add a rotation of messages to make the notifications more dynamic.
-3. Add a rotation of Civ VI memes to make the notifications more fun!
-4. Track data to see who's taking the longest to take their turn
+2. Track data to see who's taking the longest to take their turn
+   1. Re-notify after a user-defined period of time
+3. Add additional notification types (e.g. email, Slack)
+4. Create a player directory to help find others who want to Play by Cloud
+   1. Players can rate others, and data from how long it takes to take a turn can also be used
+5. Add a rotation of messages and memes to make the notifications more dynamic and fun!
+6. Ops improvements:
+   1. CI/CD
+   2. Metrics, Alarming, and Monitoring
+   3. Logs and debugging
+   4. Handle DLQ
+   5. Add <a href="https://aws.amazon.com/waf/" target="_blank">WAF</a> to protect our public endpoint
