@@ -3,7 +3,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
-import Hero from "../components/Hero";
+import HomeTop from "../components/HomeTop";
 import Seo from "../components/Seo";
 
 class IndexPage extends React.Component {
@@ -42,7 +42,11 @@ class IndexPage extends React.Component {
       <React.Fragment>
         <ThemeContext.Consumer>
           {theme => (
-            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
+            <HomeTop
+              scrollToContent={this.scrollToContent}
+              backgrounds={backgrounds}
+              theme={theme}
+            />
           )}
         </ThemeContext.Consumer>
         <hr ref={this.separator} />

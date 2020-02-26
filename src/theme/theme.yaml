@@ -133,9 +133,13 @@ icon:
 # COMPONENT TOKENS
 hero:
   h1:
-    size: *font-size-xxl
+    size: *font-size-xl
     color: *color-white
     lineHeight: *font-line-height-xs
+  h2:
+    size: *font-size-m
+  h3:
+    size: *font-size-xl
   background: 'linear-gradient(0deg, #E0306E, #6438B5)'
 blog:
   h1:

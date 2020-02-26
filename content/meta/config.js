@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: "Brett Andrews - Software Development",
-  shortSiteTitle: "Brett Andrews - Software Development", // <title> ending for posts and pages
-  siteDescription: "Cloud-native software solutions.",
+  siteTitle: "Brett Andrews - Cloud-Native Software Solutions",
+  shortSiteTitle: "Brett Andrews - Cloud-Native Software Solutions", // <title> ending for posts and pages
+  siteDescription: "Cloud-Native Software Solutions.",
   siteUrl: "https://halfstack.software",
   pathPrefix: "",
   siteImage: "preview.jpg",
@@ -13,7 +13,7 @@ module.exports = {
 
   /* info */
   headerTitle: "Brett Andrews",
-  headerSubTitle: "Software Solutions",
+  headerSubTitle: "Cloud-Native Software Solutions",
 
   /* manifest.json */
   manifestName: "Brett Andrews - Software Development",
