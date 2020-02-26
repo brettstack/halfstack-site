@@ -12,7 +12,7 @@ const HomeTOp = props => {
       <section className="home-top">
         <img src={config.gravatarImgMd5 == "" ? avatar : config.gravatarImgMd5} alt={config.siteTitle} />
         <h1>Brett Andrews</h1>
-        <h2>Cloud-native software solutions</h2>
+        <h2>Cloud-Native Software Solutions</h2>
         <h3>
           <a className="social-link" href="https://twitter.com/AWSbrett" target="_blank">
             <FaTwitter />
