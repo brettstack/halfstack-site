@@ -16,7 +16,7 @@ module.exports = {
   headerSubTitle: "Cloud-Native Software Solutions",
 
   /* manifest.json */
-  manifestName: "Brett Andrews - Software Development",
+  manifestName: "Brett Andrews - Software Solutions",
   manifestShortName: "BrettAndrews", // max 12 characters
   manifestStartUrl: "/index.html",
   manifestBackgroundColor: "white",
