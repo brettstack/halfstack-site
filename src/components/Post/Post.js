@@ -41,11 +41,11 @@ const Post = props => {
       <header>
         <Headline title={title} theme={theme} />
         <Meta prefix={prefix} author={author} category={category} theme={theme} />
-        <MailChimpSubscribe />
+        <MailChimpSubscribe theme={theme} />
       </header>
       <Bodytext html={html} theme={theme} />
       <footer>
-        <MailChimpSubscribe />
+        <MailChimpSubscribe theme={theme} />
         <Share post={post} theme={theme} />
         <Author note={authornote} theme={theme} />
         <NextPrev next={nextPost} prev={prevPost} theme={theme} />
