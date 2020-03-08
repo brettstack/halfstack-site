@@ -30,6 +30,11 @@ export default class HTML extends React.Component {
           {this.props.preBodyComponents}
           <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           {this.props.postBodyComponents}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/b13787ffc31c5db27758e8484/3e27179f8c76331734069e998.js");</script>`,
+            }}
+          />
         </body>
       </html>
     );
