@@ -246,7 +246,7 @@ class Header extends React.Component {
           }
 
           :global(.mc-layout__bannerContent iframe) {
-            min-height: auto;
+            height: auto !important;
           }
         `}</style>
       </React.Fragment>
