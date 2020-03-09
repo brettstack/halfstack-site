@@ -61,9 +61,6 @@ class IndexPage extends React.Component {
             margin: 0;
             border: 0;
           }
-          .mc-layout__bannerContent iframe {
-            min-height: auto !important;
-          }
         `}</style>
       </React.Fragment>
     );
