@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 require("core-js/fn/array/from");
 
-import { FaHome, FaTag, FaRocket } from "react-icons/fa/";
+import {
+  FaHome,
+  FaTag,
+  FaRocket,
+  FaInfo,
+} from "react-icons/fa/";
 
 import Item from "./Item";
 import Expand from "./Expand";
@@ -12,12 +17,21 @@ class Menu extends React.Component {
     super(props);
     this.itemList = React.createRef();
 
-    const pages = props.pages.map(page => ({
-      to: page.node.fields.slug,
-      label: page.node.frontmatter.menuTitle
+    const pageIcons = {
+      About: FaInfo
+    }
+
+    const pages = props.pages.map(page => {
+      const label = page.node.frontmatter.menuTitle
         ? page.node.frontmatter.menuTitle
         : page.node.frontmatter.title
-    }));
+
+      return {
+        to: page.node.fields.slug,
+        label,
+        Icon: pageIcons[label]
+      }
+    });
 
     this.items = [
       {
@@ -32,12 +46,12 @@ class Menu extends React.Component {
         // icon: '🏷',
         Icon: FaTag,
       },
-      // {
-      //   to: "/projects/",
-      //   label: "Projects",
-      //   // icon: '🚀',
-      //   Icon: FaRocket
-      // },
+      {
+        to: "/projects/",
+        label: "Projects",
+        // icon: '🚀',
+        Icon: FaRocket
+      },
       // { to: "/search/", label: "Search", icon: FaSearch },
       ...pages,
     ];
