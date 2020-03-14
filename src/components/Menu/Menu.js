@@ -46,12 +46,12 @@ class Menu extends React.Component {
         // icon: '🏷',
         Icon: FaTag,
       },
-      // {
-      //   to: "/projects/",
-      //   label: "Projects",
-      //   // icon: '🚀',
-      //   Icon: FaRocket
-      // },
+      {
+        to: "/projects/",
+        label: "Projects",
+        // icon: '🚀',
+        Icon: FaRocket
+      },
       // { to: "/search/", label: "Search", icon: FaSearch },
       ...pages,
     ];
