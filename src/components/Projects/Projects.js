@@ -36,7 +36,7 @@ const projects = [
     image: ServerlessExpressImage,
     title: 'aws-serverless-express',
     titleLink: 'https://github.com/awslabs/aws-serverless-express',
-    role: 'Creator and maintainer',
+    role: 'Creator, maintainer, engineering and product lead',
     Description: () => (
       <React.Fragment>
         <p>

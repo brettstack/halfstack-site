@@ -12,6 +12,7 @@ space :
   xl: 80px
   inset:
     default : 20px
+    xxs: 2px
     xs: 5px
     s: 10px
     m: 20px
