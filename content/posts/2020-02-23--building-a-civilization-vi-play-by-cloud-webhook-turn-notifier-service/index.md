@@ -110,9 +110,9 @@ custom:
       validationDomain: halfstack.software
       enabled: true
   customDomain:
-    domainName: ${{self:custom.domain.${{opt:stage, self:provider.stage}}.domain}}
+    domainName: ${{self:custom.domain.${{self:provider.stage}}.domain}}
     certificateName: '*.civ.halfstack.software'
-    enabled: ${{self:custom.domain.${{opt:stage, self:provider.stage}}.enabled}}
+    enabled: ${{self:custom.domain.${{self:provider.stage}}.enabled}}
     createRoute53Record: false
 
 functions:
