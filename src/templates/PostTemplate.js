@@ -69,6 +69,13 @@ export const postQuery = graphql`
               src
             }
           }
+          children {
+            ... on ImageSharp {
+              fluid(maxWidth: 800, maxHeight: 360) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
       }
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "prismjs/themes/prism-okaidia.css";
+import Img from "gatsby-image";
 
 import asyncComponent from "../AsyncComponent";
 import Headline from "../Article/Headline";
@@ -27,7 +28,14 @@ const Post = props => {
     post: {
       html,
       fields: { prefix, slug },
-      frontmatter: { title, author, category }
+      frontmatter: {
+        title,
+        author,
+        category,
+        cover: {
+          children: [{ fluid }]
+        }
+      }
     },
     authornote,
     facebook,
@@ -38,10 +46,11 @@ const Post = props => {
 
   return (
     <React.Fragment>
-      <header>
+      <header className="post__header">
         <Headline title={title} theme={theme} />
         <Meta prefix={prefix} author={author} category={category} theme={theme} />
         <MailChimpSubscribe theme={theme} />
+        <Img fluid={fluid} />
       </header>
       <Bodytext html={html} theme={theme} />
       <footer>
@@ -51,6 +60,14 @@ const Post = props => {
         <NextPrev next={nextPost} prev={prevPost} theme={theme} />
         <Comments slug={slug} facebook={facebook} theme={theme} />
       </footer>
+      {/* --- STYLES --- */}
+      {/* NOTE: calc() fails when using variables ${theme.text.maxWidth.desktop} so we're hardcoding below */}
+      <style jsx>{`
+      .post__header :global(.gatsby-image-wrapper) {
+        border-radius: ${theme.size.radius.default};
+        margin-bottom: 1em;
+      }
+      `}</style>
     </React.Fragment>
   );
 };
