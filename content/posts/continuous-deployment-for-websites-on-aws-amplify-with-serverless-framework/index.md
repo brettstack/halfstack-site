@@ -1,5 +1,5 @@
 ---
-title: 'Deploy a website to AWS Amplify with Serverless Framework'
+title: 'Continuous Deployment for websites on AWS Amplify with Serverless Framework'
 category: "serverless"
 cover: jj-ying-4XvAZN8_WHo-unsplash.jpg
 author: Brett Andrews
