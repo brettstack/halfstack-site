@@ -7,9 +7,9 @@ author: Brett Andrews
 
 It's easier than ever to create a website and present it to the world, especially for non-technical people with the rise of online Website Builders. For more advanced websites, software engineers and web developers have also been spoilt with recent tools such as Zeit, Netlify, GitHub Pages, and the more recent AWS Amplify Console.
 
-<a href="https://aws.amazon.com/amplify/console/" target="_blank">AWS Amplify Console</a> is an AWS service launched in November 2018 that provides "Hosting for fullstack serverless web apps with continuous deployment". Despite what the name implies, AWS Amplify "Console" includes CloudFormation support, allowing you to configure the resources using Infrastructure as Code (IAC). Prior to Amplify Console, I needed to write over 100 lines of complex CloudFormation to set up a static website with <a href="https://aws.amazon.com/s3/" target="_blank">S3</a>, <a href="https://aws.amazon.com/cloudfront/" target="_blank">CloudFront</a>, and <a href="https://aws.amazon.com/route53/" target="_blank">Route53</a>.
+<a href="https://aws.amazon.com/amplify/console/" target="_blank">AWS Amplify Console</a> is an AWS service launched in November 2018 that provides "Hosting for fullstack serverless web apps with continuous deployment". Despite what the name implies, AWS Amplify "Console" includes CloudFormation support, allowing you to configure the resources using Infrastructure as Code (IAC).
 
-There's no doubt that behind the scenes these are the fundamental building blocks Amplify Console is using, but not only does it provide a simple abstraction over those AWS Services, it includes a lot of other great features like Continuous Deployment and Pull Request Previews.
+Prior to Amplify Console, I had to write over 100 lines of complex CloudFormation to set up a static website with <a href="https://aws.amazon.com/s3/" target="_blank">S3</a>, <a href="https://aws.amazon.com/cloudfront/" target="_blank">CloudFront</a>, and <a href="https://aws.amazon.com/route53/" target="_blank">Route53</a>. There's no doubt that behind the scenes these are the fundamental building blocks Amplify Console is using, but not only does it provide a simple abstraction over those AWS Services, it includes a lot of other great features like Continuous Deployment, Pull Request Previews, Cypress tests and more.
 
 Let's take a look at what's required to stand up a basic website with AWS Amplify using the Serverless Framework:
 
@@ -132,6 +132,19 @@ For now, you should be able to setup AWS CodePipeline yourself (or the CI/CD pip
 
 Rollbacks might be a challenge still, but maybe you can leverge the `start-job --commit-id` parameter. If you try this out (or any other method of advanced CD with Amplify Console) let me know how it goes!
 
-## Let us help!
+## Simplifying further - a Serverless Framework Plugin
 
-Wizeline plug
+Wizeline is currently developing a Serverless Framework Plugin that reduces the above example to:
+
+```yaml
+plugins:
+  - serverless-amplify-plugin
+
+custom:
+  amplify:
+    repository: https://github.com/USER/REPO
+```
+
+## About Wizeline
+
+Wizeline is a software development and design services company with operations in the U.S., Mexico, Vietnam, Thailand, Australia, and Spain. Wizeline partners with global enterprises and scaling startups to build end-to-end digital products.
