@@ -136,7 +136,7 @@ jobs:
       run: npm ci
 
     - name: Release
-      run: npm run release
+      run: npx semantic-release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
