@@ -134,7 +134,7 @@ const { createUser } = require('./controllers/user')
 
 async function handler(event) {
   try {
-    const user = await createUser(eventTODO)
+    const user = await createUser(event)
 
     return {
       statusCode,
