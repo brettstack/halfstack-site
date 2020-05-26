@@ -134,17 +134,13 @@ Rollbacks might be a challenge still, but maybe you can leverge the `start-job -
 
 ## Simplifying further - a Serverless Framework Plugin
 
-Wizeline is currently developing a Serverless Framework Plugin that reduces the above example to:
+<a href="https://wizeline.com" target="_blank">Wizeline</a> has developed a <a href="https://github.com/wizeline/serverless-amplify-plugin/" target="_blank">Serverless Framework Plugin</a> that reduces the above example to:
 
 ```yaml
 plugins:
-  - serverless-amplify-plugin
+  - @wizeline/serverless-amplify-plugin
 
 custom:
   amplify:
     repository: https://github.com/USER/REPO
 ```
-
-## About Wizeline
-
-Wizeline is a software development and design services company with operations in the U.S., Mexico, Vietnam, Thailand, Australia, and Spain. Wizeline partners with global enterprises and scaling startups to build end-to-end digital products.
