@@ -5,6 +5,8 @@ cover: architecture-diagram.png
 author: Brett Andrews
 ---
 
+> The <a href="https://civ.halfstack.software" target="_blank">Civilization 6 Play By Cloud Turn Notifications Service</a> is now available for Discord. If you're interested in the technical details, read on! Otherwise, I hope turn notifications make your games more enjoyable. 😁
+
 Back in the 90s, my Grandma purchased a used PC that came loaded with a few games for us kids. One of those games was <a href="https://en.wikipedia.org/wiki/Police_Quest" target="_blank">Police Quest</a>, which was my first introduction to typing commands into a computer. But the game that stood the test of time was <a href="https://civilization.com/" target="_blank">Sid Meier's Civilization</a>.
 
 Admittedly, I had no idea how to play Civ at that young age, and I mostly played it as a city builder. I loved seeing those 8-bit animations whenever I completed a World Wonder.
@@ -12,8 +14,6 @@ Admittedly, I had no idea how to play Civ at that young age, and I mostly played
 I've played every Civilization release since, and while I'm not particularly good at the game, I was able to finally claim victory on the hardest difficulty. I spawned right next to another Civ and took their Settler before they could found a city... Sorry Australia. Still counts.
 
 In this series of articles, we'll build a service to enhance the player experience in Civilization VI's "Play by Cloud" mode. You can find <a href="https://github.com/brettstack/civ6-play-by-cloud-turn-notifier" target="_blank">the source code for the entire service on GitHub</a>.
-
-> If you're just here to get Play by Cloud notifications to Discord and don't care about the technical details, simply create a Discord Channel Webhook, copy the URL, paste it onto the end of this URL `https://civ.halfstack.software?discordWebhook=YOUR_DISCORD_WEBHOOK_URL_HERE`, and copy-paste that final URL into the Civ VI game settings. 🚀
 
 ## Civilization VI, Play by Cloud, and Webhooks
 
