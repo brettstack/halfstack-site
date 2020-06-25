@@ -17,6 +17,8 @@ In this series of articles, we'll build a service to enhance the player experien
 
 ## Civilization VI, Play by Cloud, and Webhooks
 
+> <a href="https://civ.halfstack.software" target="_blank">Civ 6 Play By Cloud Turn Notifications</a> is now available for Discord. If you're interested in the technical details, read on! Otherwise, I hope turn notifications make your games more enjoyable. 😁
+
 Civilization VI comes with a new way to play online called Play by Cloud. PBC lets you play with multiple people without requiring them to all be online at the same time. Simply take your turn, and log off. This is great for those of us who have difficulty finding the time to sit down and play hours of video games (and Civ takes many, many hours).
 
 Instead of a single epic session (or even several multi-hour sessions), the game can now be broken up into hundreds of micro-sessions taking just a few minutes each. Certainly the game may take a year to complete, but there's also something unique about having a long-running experience like that with friends.
