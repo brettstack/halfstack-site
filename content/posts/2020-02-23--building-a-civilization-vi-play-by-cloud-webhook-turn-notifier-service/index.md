@@ -5,6 +5,15 @@ cover: architecture-diagram.png
 author: Brett Andrews
 ---
 
+> This project was built using <a href="https://codegenie.codes">Code Genie</a>. Starting a new software project? Check out Code Genie - a <a href="https://codegenie.codes">Full Stack App Generator</a> that generates source code based on your project's data model. Including:
+> 1. A React Next.js Web App hosted on Amplify Hosting
+> 1. Serverless Express REST API running on API Gateway and Lambda
+> 1. Cognito User Pools for Identity/Authentication
+> 1. DynamoDB Database
+> 1. Cloud Development Kit (CDK) for Infrastructure as Code (IAC)
+> 1. Continuous Integration/Delivery (CI/CD) with GitHub Actions
+> 1. And more!
+
 > The <a href="https://civ.halfstack.software" target="_blank">Civilization 6 Play By Cloud Turn Notifications Service</a> is now available for Discord. If you're interested in the technical details, read on! Otherwise, I hope turn notifications make your games more enjoyable. 😁
 
 Back in the 90s, my Grandma purchased a used PC that came loaded with a few games for us kids. One of those games was <a href="https://en.wikipedia.org/wiki/Police_Quest" target="_blank">Police Quest</a>, which was my first introduction to typing commands into a computer. But the game that stood the test of time was <a href="https://civilization.com/" target="_blank">Sid Meier's Civilization</a>.

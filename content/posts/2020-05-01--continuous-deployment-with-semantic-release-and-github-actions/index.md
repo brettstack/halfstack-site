@@ -5,7 +5,16 @@ cover: ankush-minda-TLBplYQvqn0-unsplash.jpg
 author: Brett Andrews
 ---
 
-At <a href="https://www.wizeline.com/" target="_blank">Wizeline</a>, we strive for operational excellence when developing software for all of our clients, from startups to enterprise. This includes test and release automation as a core pillar of DevOps. In this article, we'll cover how to use <a href="https://github.com/features/actions" target="_blank">GitHub Actions</a> and <a href="https://semantic-release.gitbook.io/semantic-release/" target="_blank">Semantic Release</a> to automatically test, build, version, tag and release software packages on <a href="https://github.com/" target="_blank">GitHub</a> and <a href="npmjs.com" target="_blank">NPM</a>. We'll then explore how we can expand on this foundation to continuously deploy software services to the cloud.
+> If you find the approach in this article interesting, check out <a href="https://codegenie.codes">Code Genie</a>. Starting a new software project? Code Genie is a <a href="https://codegenie.codes">Full Stack App Generator</a> that generates source code based on your project's data model. Including:
+> 1. A React Next.js Web App hosted on Amplify Hosting
+> 1. Serverless Express REST API running on API Gateway and Lambda
+> 1. Cognito User Pools for Identity/Authentication
+> 1. DynamoDB Database
+> 1. Cloud Development Kit (CDK) for Infrastructure as Code (IAC)
+> 1. Continuous Integration/Delivery (CI/CD) with GitHub Actions
+> 1. And more!
+
+Operational excellence is critical for all software projects, from startups to enterprise. This includes test and release automation as a core pillar of DevOps. In this article, we'll cover how to use <a href="https://github.com/features/actions" target="_blank">GitHub Actions</a> and <a href="https://semantic-release.gitbook.io/semantic-release/" target="_blank">Semantic Release</a> to automatically test, build, version, tag and release software packages on <a href="https://github.com/" target="_blank">GitHub</a> and <a href="npmjs.com" target="_blank">NPM</a>. We'll then explore how we can expand on this foundation to continuously deploy software services to the cloud.
 
 ## Semantic Release
 
@@ -159,7 +168,3 @@ What we've walked through so far is great for releasing software packages such a
 1. Is triggered when a new GitHub release is published.
 2. Downloads the assets of the latest release.
 3. And deploys the build artifacts to AWS.
-
-## Let us help!
-
-Looking for a partner to help build your software or expand your existing team with veteran engineers, project managers, technical writers and more? Reach out to us at Wizeline.

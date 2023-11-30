@@ -5,6 +5,15 @@ cover: kenrick-mills-MF9Wy1NA55I-unsplash.jpg
 author: Brett Andrews
 ---
 
+> If you find the approach in this article interesting, check out <a href="https://codegenie.codes">Code Genie</a>. Starting a new software project? Code Genie is a <a href="https://codegenie.codes">Full Stack App Generator</a> that generates source code based on your project's data model. Including:
+> 1. A React Next.js Web App hosted on Amplify Hosting
+> 1. Serverless Express REST API running on API Gateway and Lambda
+> 1. Cognito User Pools for Identity/Authentication
+> 1. DynamoDB Database
+> 1. Cloud Development Kit (CDK) for Infrastructure as Code (IAC)
+> 1. Continuous Integration/Delivery (CI/CD) with GitHub Actions
+> 1. And more!
+
 One of the most common use cases of Serverless architecture is serving REST APIs with Amazon API Gateway and Lambda. In this article we'll cover how to migrate your existing REST APIs to AWS, resulting in saved costs, reduced operational overhead, "infinite" scaling, and more. We'll then go a step further and see how we can evolve our application over time to be more cloud-native and take advantage of the entire AWS and Serverless ecosystem.
 
 AWS provides tools such as https://github.com/awslabs/aws-serverless-express and https://github.com/awslabs/aws-serverless-java-container that make migrating Node.js and Java REST APIs a breeze. aws-serverless-express is framework agnostic (you'd be forgiven for thinking otherwise), which means it works not only for Express, Koa, Hapi, and Sails, but also vanilla Node.js HTTP servers also. aws-serverless-java-container also boasts a large number of framework support, such as Spring, Spring Boot, Apache Struts, Jersey, Spark, and Micronaut.
@@ -168,5 +177,3 @@ Have some compute workloads that just won't work with the Lambda model? Check ou
 Want some containerization with your compute? If you're using Kubernetes, there's their managed Kubernetes service EKS. If you're not yet married to Kubernetes, ECS might be the better containerization option. They also have ECR for storing container images (similar to DockerHub, but with better integration with ECS and the rest of AWS). Similar to migrating databases, you can use the Server Migration Service to help with server migrations.
 
 Hosting a static website? Check out Amplify Console. Again, if you're a little more adventurous, you can use the underlying services, namely S3 and CloudFront to host a static website.
-
-This is just a tiny subset of what AWS has to offer. If you need help with your cloud migration, Wizeline is an AWS Advanced Partner and we're ready to help!

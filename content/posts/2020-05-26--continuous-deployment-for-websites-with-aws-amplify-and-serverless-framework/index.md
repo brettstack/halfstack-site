@@ -5,6 +5,15 @@ cover: jj-ying-4XvAZN8_WHo-unsplash.jpg
 author: Brett Andrews
 ---
 
+> If you find the approach in this article interesting, check out <a href="https://codegenie.codes">Code Genie</a>. Starting a new software project? Code Genie is a <a href="https://codegenie.codes">Full Stack App Generator</a> that generates source code based on your project's data model. Including:
+> 1. A React Next.js Web App hosted on Amplify Hosting
+> 1. Serverless Express REST API running on API Gateway and Lambda
+> 1. Cognito User Pools for Identity/Authentication
+> 1. DynamoDB Database
+> 1. Cloud Development Kit (CDK) for Infrastructure as Code (IAC)
+> 1. Continuous Integration/Delivery (CI/CD) with GitHub Actions
+> 1. And more!
+
 It's easier than ever to create a website and present it to the world, especially for non-technical people with the rise of online Website Builders. For more advanced websites, software engineers and web developers have also been spoilt with recent tools such as Zeit, Netlify, GitHub Pages, and the more recent AWS Amplify Console.
 
 <a href="https://aws.amazon.com/amplify/console/" target="_blank">AWS Amplify Console</a> is an AWS service launched in November 2018 that provides "Hosting for fullstack serverless web apps with continuous deployment". Despite what the name implies, AWS Amplify "Console" includes CloudFormation support, allowing you to configure the resources using Infrastructure as Code (IAC).

@@ -6,10 +6,33 @@ import SqsPartialBatchFailureImage from './Amazon-Simple-Queue-Service-SQS@4x.pn
 import HalfstackSoftwareImage from './AWS-Amplify_light-bg@4x.png'
 import ServerlessExpressImage from './AWS-Lambda@4x.png'
 import SamImage from './aws-sam.png'
+import CodeGenieLogoImage from './code-genie-logo.png'
 import SarImage from './AWS-Serverless-Application-Repository_light-bg@4x.png'
 import CsnetImage from './csnet.png'
 
 const projects = [
+  {
+    backgroundColor: '#FF0088',
+    fontColor: '#FFFFFF',
+    image: CodeGenieLogoImage,
+    title: 'Code Genie - Full Stack App Generator',
+    titleLink: 'https://codegenie.codes/',
+    role: 'Founder',
+    Description: () => (
+      <React.Fragment>
+        <p>Starting a new software project? Check out Code Genie - a <a href="https://codegenie.codes">Full Stack App Generator</a> that generates source code based on your project's data model. Including:</p>
+        <ol>
+          <li>A React Next.js Web App hosted on Amplify Hosting</li>
+          <li>Serverless Express REST API running on API Gateway and Lambda</li>
+          <li>Cognito User Pools for Identity/Authentication</li>
+          <li>DynamoDB Database</li>
+          <li>Cloud Development Kit (CDK) for Infrastructure as Code (IAC)</li>
+          <li>Continuous Integration/Delivery (CI/CD) with GitHub Actions</li>
+          <li>And more!</li>
+        </ol>
+      </React.Fragment>
+    )
+  },
   {
     backgroundColor: '#FF0088',
     fontColor: '#FFFFFF',
@@ -35,18 +58,18 @@ const projects = [
     fontColor: '#FFFFFF',
     image: ServerlessExpressImage,
     title: 'aws-serverless-express',
-    titleLink: 'https://github.com/awslabs/aws-serverless-express',
+    titleLink: 'https://github.com/brettstack/serverless-express',
     role: 'Creator, maintainer, engineering and product lead',
     Description: () => (
       <React.Fragment>
         <p>
-          <a href="https://github.com/awslabs/aws-serverless-express" target="_blank">aws-serverless-express</a> is a library for
+          <a href="https://github.com/brettstack/serverless-express" target="_blank">aws-serverless-express</a> is a library for
           running [Express](https://expressjs.com/) and other Node.js web frameworks on
           <a href="https://aws.amazon.com/serverless/" target="_blank">Serverless AWS</a> using
           <a href="https://aws.amazon.com/lambda/" target="_blank">Lambda</a> and
           <a href="https://aws.amazon.com/api-gateway/" target="_blank">Amazon API Gateway</a>. The project is used by thousands of
           <a href="https://aws.amazon.com/" target="_blank">AWS</a> customers for running production applications of all scales,
-          has over 3k stars on <a href="https://github.com/awslabs/aws-serverless-express" target="_blank">GitHub</a>, and is downloaded
+          has over 5k stars on <a href="https://github.com/awslabs/aws-serverless-express" target="_blank">GitHub</a>, and is downloaded
           over 800k times a month on <a href="https://www.npmjs.com/package/aws-serverless-express" target="_blank">NPM</a>.
         </p>
         <p>

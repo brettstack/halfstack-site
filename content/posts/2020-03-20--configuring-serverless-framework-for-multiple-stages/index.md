@@ -5,6 +5,15 @@ cover: rawfilm-ihMzQV3lleo-unsplash.jpg
 author: Brett Andrews
 ---
 
+> If you find the approach in this article interesting, check out <a href="https://codegenie.codes">Code Genie</a>. Starting a new software project? Code Genie is a <a href="https://codegenie.codes">Full Stack App Generator</a> that generates source code based on your project's data model. Including:
+> 1. A React Next.js Web App hosted on Amplify Hosting
+> 1. Serverless Express REST API running on API Gateway and Lambda
+> 1. Cognito User Pools for Identity/Authentication
+> 1. DynamoDB Database
+> 1. Cloud Development Kit (CDK) for Infrastructure as Code (IAC)
+> 1. Continuous Integration/Delivery (CI/CD) with GitHub Actions
+> 1. And more!
+
 <a href="https://aws.amazon.com/cloudformation/" target="_blank">AWS CloudFormation</a> lets you define "variables" in your templates by specifying <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html" target="_blank">Parameters</a> along with a `Default` value. However, they're limited to static values. That is, you can't provide dynamic values based on stage values or other inputs
 
 > You *can* <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html" target="_blank">use dynamic values stored in other AWS services within your CloudFormation template</a>, but that's a little different.

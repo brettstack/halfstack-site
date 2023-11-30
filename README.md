@@ -16,7 +16,7 @@ A [GatsbyJS](https://www.gatsbyjs.org/) blog starter. <br /><br />
 
 ## Setup
 
-Requires Node 10.
+Requires Node 10. Run `nvm i 10` and `npm run develop` in Rosetta https://stackoverflow.com/questions/75977628/how-to-install-node-v10-on-m2-max-on-macbook-pro-16.
 
 ```shell
 npm run develop
