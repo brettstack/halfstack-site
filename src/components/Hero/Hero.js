@@ -9,8 +9,8 @@ const Hero = props => {
   return (
     <React.Fragment>
       <section className="hero">
-        <h1>Cloud-Native Software Solutions</h1>
-        <h2></h2>
+        <h2>Founder, <a href="https://codegenie.codes" style={{color: 'white', textDecoration: 'underline'}}>Code Genie</a></h2>
+        <h3>Cloud-Native Software Solutions</h3>
         <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
         </button>
